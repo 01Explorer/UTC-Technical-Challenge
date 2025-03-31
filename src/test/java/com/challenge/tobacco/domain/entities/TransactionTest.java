@@ -38,7 +38,7 @@ class TransactionTest {
     @Test
     void testSettersAndGetters() {
         Transaction transaction = new Transaction(null);
-        Integer id = 1;
+        Long id = 1L;
         Instant now = Instant.now();
 
         transaction.setId(id);
