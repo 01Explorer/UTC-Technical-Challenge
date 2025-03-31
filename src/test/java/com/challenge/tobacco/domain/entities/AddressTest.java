@@ -1,6 +1,5 @@
-package com.challenge.tobacco.entities;
+package com.challenge.tobacco.domain.entities;
 
-import com.challenge.tobacco.domain.entities.Address;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
