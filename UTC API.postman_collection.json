@@ -1,0 +1,1047 @@
+{
+	"info": {
+		"_postman_id": "ee97027b-6e2e-43f2-842d-b260c7dd67e9",
+		"name": "UTC API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43266874"
+	},
+	"item": [
+		{
+			"name": "Producer",
+			"item": [
+				{
+					"name": "Create Producer",
+					"item": [
+						{
+							"name": "Create Producer Without CEP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"05074780023211\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Producer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"05074780021\",\n    \"cep\": \"96830090\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Producer",
+					"item": [
+						{
+							"name": "Get Single Existent Producer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/producer/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Inexistent Producer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/producer/-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Producers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/producer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Producer",
+					"item": [
+						{
+							"name": "Delete Inexistent Producer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/producer/-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existent Producer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/producer/6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Producer",
+					"item": [
+						{
+							"name": "Edit Inexistent Producer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"1111111111\",\n    \"cep\": \"96830090\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer/-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Existent Producer Name",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"05074780024\",\n    \"cep\": \"96830090\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Existent Producer CPF that already exists",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"05074780020\",\n    \"cep\": \"96830090\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Existent Producer CEP",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"cpf\": \"05074780024\",\n    \"cep\": \"95800000\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patch Producer",
+					"item": [
+						{
+							"name": "Patch Producer",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cep\": \"88900275\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/producer/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"producer",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Create Class",
+					"item": [
+						{
+							"name": "Create Class",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"BO3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Empty Class",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Class",
+					"item": [
+						{
+							"name": "Get All Classes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Existent Class",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Class",
+					"item": [
+						{
+							"name": "Delete Inexistent Class",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existent Class",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Class",
+					"item": [
+						{
+							"name": "Edit Inexistent Class",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"AB02\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class/-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Existent Classs",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"AB02\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class/5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bundle",
+			"item": [
+				{
+					"name": "Create Bundle",
+					"item": [
+						{
+							"name": "Create Bundle",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"label\": \"{{$randomAlphaNumeric}}\",\n    \"boughtAt\": \"{{$timestamp}}\",\n    \"producerID\": 2,\n    \"classID\": 4,\n    \"weight\": 6900\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Bundle with invalid time",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var date = Date.now()",
+											"pm.globals.set(\"invalidTS\", date + 8);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"label\": \"2184789147912489\",\n    \"boughtAt\": \"{{invalidTS}}\",\n    \"producerID\": 1,\n    \"classID\": 4,\n    \"weight\": 600\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Bundle",
+					"item": [
+						{
+							"name": "Get Single Bundle",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/bundle/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Inexistent Bundle",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/bundle/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Bundles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/bundle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Bundle",
+					"item": [
+						{
+							"name": "Delete Inexistent Bundle",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/bundle/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existent Bundle",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/bundle/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Bundle",
+					"item": [
+						{
+							"name": "Edit Bundle",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"label\": \"2184789147912490\",\n    \"boughtAt\": \"{{$timestamp}}\",\n    \"producerID\": 1,\n    \"classID\": 5,\n    \"weight\": 767\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Inexistent Bundle",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"label\": \"2184789147912490\",\n    \"boughtAt\": \"{{$timestamp}}\",\n    \"producerID\": 1,\n    \"classID\": 5,\n    \"weight\": 767\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patch Bundle",
+					"item": [
+						{
+							"name": "Patch Bundle",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"weight\": 800\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch Inexistent Bundle Copy",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bundle/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bundle",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Create Transactions",
+					"item": [
+						{
+							"name": "Create Transaction With Inexistent Bundle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"bundleId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/transaction",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction Invalid Bundle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"bundleId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/transaction",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"bundleId\": 12\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/transaction",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bought By Producer",
+					"item": [
+						{
+							"name": "Bought By Producer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/transaction?producerId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "producerId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bought By Class",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/transaction?classId=5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "classId",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bought General",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/transaction",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bought Between",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/transaction?to={{$isoTimestamp}}&from={{today}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "to",
+											"value": "{{$isoTimestamp}}"
+										},
+										{
+											"key": "from",
+											"value": "{{today}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
